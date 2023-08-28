@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Broccoli - Organic Food HTML Template</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Place favicon.png in the root directory -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Font Icons css -->
+    <link rel="stylesheet" href="{% static 'css/font-icons.css' %}" />
+    <!-- plugins css -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+  </head>
+
+  <body>
+    {% include 'partails/navbar.html' %}
+
+    <div class="body-wrapper">{% block content %}{% endblock %}</div>
+    {% include 'partails/footer.html' %}
+    <!-- preloader area start -->
+    <div class="preloader d-none" id="preloader">
+      <div class="preloader-inner">
+        <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- preloader area end -->
+
+    <!-- All JS Plugins -->
+
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

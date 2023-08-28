@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Broccoli - Organic Food HTML Template</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Place favicon.png in the root directory -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Font Icons css -->
+    <link rel="stylesheet" href="{% static 'css/font-icons.css' %}" />
+    <!-- plugins css -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+  </head>
+
+  <body>
+    <div class="body-wrapper">
+      <div class="ltn__login-area pb-110">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-title-area text-center">
+                <h1 class="section-title">
+                  {% if request.path == '/accounts/login/' %}login<br />Your Account{% endif %}
+                  {% if request.path == '/accounts/register/' %}register<br />Your Account {% endif %}
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+              <div class="account-login-inner">
+                {% block content %} 
+                
+                {% endblock %}
+                <div class="by-agree text-center">
+
+                  {% if request.path == '/accounts/login/' %}
+                  <div class="go-to-btn mt-50">
+                    <a href="{% url 'registration_register' %}"
+                      >CREAT A ACCOUNT</a
+                    >
+                  </div>
+                  {% elif request.path == '/accounts/register/' %}
+                  <p>By creating an account, you agree to our:</p>
+                  <p>
+                    <a href="#"
+                      >TERMS OF CONDITIONS &nbsp; &nbsp; | &nbsp; &nbsp; PRIVACY
+                      POLICY</a
+                    >
+                  </p>
+                  <div class="go-to-btn mt-50">
+                    <a href="{% url 'auth_login' %}"
+                      >ALREADY HAVE AN ACCOUNT ?</a
+                    >
+                  </div>
+                  {% else %}
+
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- preloader area start -->
+    <div class="preloader d-none" id="preloader">
+      <div class="preloader-inner">
+        <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- preloader area end -->
+
+    <!-- All JS Plugins -->
+
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

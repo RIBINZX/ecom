@@ -1,0 +1,24 @@
+
+@media (min-width: 991px){
+    .shop-banner{
+        padding: 100px 0px 50px 0px;
+    }
+} 
+.shop-sidebar.col-lg-4 {
+    position: relative;
+}
+
+.shop-sidebar-items.sidebar.ltn__shop-sidebar.ltn__right-sidebar {
+    position: sticky;
+    top: 70px;
+
+
+
+    z-index: 1;
+    height: fit-content; /* Allow the content to dictate the height */
+    overflow-y: auto; /* Add scrolling if the content is taller than the sidebar */
+}
+
+
+
+
