@@ -1,6 +1,8 @@
 from django.db import models
 from versatileimagefield.fields import VersatileImageField
 from tinymce.models import HTMLField
+from django.core.validators import MinValueValidator, MaxValueValidator
+
 
 # Create your models here.
 
@@ -25,3 +27,17 @@ class Product(models.Model):
 class Product_images(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     image = VersatileImageField(upload_to='product_images/')
+    
+    
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    email = models.EmailField(null=True, blank=True)
+    comment = models.TextField()
+    rating = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    )
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Review by {self.name} for {self.product.name}"
